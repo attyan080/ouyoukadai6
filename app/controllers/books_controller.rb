@@ -7,12 +7,13 @@ before_action :ensure_correct_user, only: [:edit, :update, :destroy]
     @book_new = Book.new
     @user = @book.user
     @book_comment = BookComment.new
-
+    @users = User.all
   end
 
   def index
     @books = Book.all
     @book = Book.new
+    @users = User.all
   end
 
   def create
